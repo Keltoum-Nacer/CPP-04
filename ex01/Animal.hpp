@@ -6,7 +6,7 @@
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 20:19:56 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/17 10:42:19 by knacer           ###   ########.fr       */
+/*   Updated: 2024/11/18 18:24:49 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ANIMAL_HPP
 
 #include<iostream>
+#include "Brain.hpp"
 
 class Animal
 {

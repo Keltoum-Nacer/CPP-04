@@ -6,7 +6,7 @@
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 10:04:23 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/17 10:22:33 by knacer           ###   ########.fr       */
+/*   Updated: 2024/11/18 18:25:01 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 #define CAT_HPP
 
 #include"Animal.hpp"
+class Brain;
 
 class Cat : public Animal
 {
+    private:
+        Brain *brain;
     public:
-    Cat();
-    ~Cat();
-    Cat(Cat& copy);
-    Cat& operator=(const Cat& copy);
-    void makeSound() const;
+        Cat();
+        ~Cat();
+        Cat(Cat& copy);
+        Cat& operator=(const Cat& copy);
+        void makeSound() const;
 };
 
 #endif

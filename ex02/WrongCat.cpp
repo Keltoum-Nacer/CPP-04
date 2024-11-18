@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 10:05:21 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/18 15:57:50 by knacer           ###   ########.fr       */
+/*   Created: 2024/11/17 10:28:57 by knacer            #+#    #+#             */
+/*   Updated: 2024/11/17 10:30:29 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Cat.hpp"
+#include"WrongCat.hpp"
 
-Cat::Cat()
+WrongCat::WrongCat()
 {
-    std::cout << "Cat default constructor called!" << std::endl;
-    type = "Cat";
+    std::cout << "WrongCat default constructor called!" << std::endl;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-    std::cout << "Cat destructor called!" << std::endl;
+    std::cout << "WrongCat destructor called!" << std::endl;
 }
 
-Cat::Cat(Cat &copy)
+WrongCat::WrongCat(WrongCat &copy)
 {
-    std::cout << "Cat copy constructor called" << std::endl;
+    std::cout << "WrongCat copy constructor called" << std::endl;
     *this = copy;
 }
 
-Cat& Cat::operator=(const Cat& copy)
+WrongCat& WrongCat::operator=(const WrongCat& copy)
 {
-    std::cout << "Cat copy assignment operator" << std::endl;
+    std::cout << "WrongCat copy assignment operator" << std::endl;
     if (this != &copy)
     {
         *this = copy;
@@ -39,7 +38,7 @@ Cat& Cat::operator=(const Cat& copy)
     return(*this);
 }
 
-void Cat::makeSound() const
+void WrongCat::makeSound() const
 {
-    std::cout << "Cat sound" << std::endl;
+    std::cout << "WrongCat sound" << std::endl;
 }

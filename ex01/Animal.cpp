@@ -6,7 +6,7 @@
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 20:31:27 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/17 10:21:39 by knacer           ###   ########.fr       */
+/*   Updated: 2024/11/18 18:24:40 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,4 @@ void Animal::makeSound() const
 {
     std::cout << "Animal sound" << std::endl;
 }
+

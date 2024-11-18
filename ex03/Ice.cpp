@@ -1,45 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 10:05:21 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/18 15:57:50 by knacer           ###   ########.fr       */
+/*   Created: 2024/11/18 21:00:53 by knacer            #+#    #+#             */
+/*   Updated: 2024/11/18 21:36:48 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Cat.hpp"
+#include"Ice.hpp"
 
-Cat::Cat()
+Ice::Ice(): AMateria("ice")
 {
-    std::cout << "Cat default constructor called!" << std::endl;
-    type = "Cat";
+    std::cout << "Ice constructor called" << std::endl;
 }
 
-Cat::~Cat()
+Ice::~Ice()
 {
-    std::cout << "Cat destructor called!" << std::endl;
+    std::cout << "Ice destructor called" << std::endl;   
 }
 
-Cat::Cat(Cat &copy)
+Ice::Ice(const Ice& copy):AMateria(copy)
 {
-    std::cout << "Cat copy constructor called" << std::endl;
-    *this = copy;
+    std::cout << "Ice copy constructor called" << std::endl;
 }
 
-Cat& Cat::operator=(const Cat& copy)
+Ice& Ice::operator=(const Ice& copy)
 {
-    std::cout << "Cat copy assignment operator" << std::endl;
+    std::cout << "Ice copy assignment operator" << std::endl;
     if (this != &copy)
     {
-        *this = copy;
+        AMateria::operator=(copy);
     }
     return(*this);
 }
 
-void Cat::makeSound() const
+AMateria* Ice::clone() const
 {
-    std::cout << "Cat sound" << std::endl;
+    return new Ice(*this);
 }

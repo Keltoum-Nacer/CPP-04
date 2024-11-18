@@ -1,8 +1,8 @@
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp
 OFILES = $(SRCS:.cpp=.o)
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = Animal
+NAME = AMateria
 
 all: $(NAME)
 

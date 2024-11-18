@@ -1,45 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 09:57:42 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/18 15:57:31 by knacer           ###   ########.fr       */
+/*   Created: 2024/11/13 20:31:27 by knacer            #+#    #+#             */
+/*   Updated: 2024/11/18 20:09:45 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Dog.hpp"
+#include"Animal.hpp"
 
-Dog::Dog()
+Animal::Animal()
 {
-    std::cout << "Dog default constructor called!" << std::endl;
-    type = "Dog";
+    std::cout << "Animal default constructor called" << std::endl;
+    type = "Animal";
 }
 
-Dog::~Dog()
+Animal::~Animal()
 {
-    std::cout << "Dog destructor called!" << std::endl;
+    std::cout << "Animal destructor called" << std::endl;
 }
 
-Dog::Dog(Dog &copy)
+Animal::Animal(Animal& copy)
 {
-    std::cout << "Dog copy constructor called" << std::endl;
+    std::cout << "Animal copy constructor called" << std::endl;
     *this = copy;
 }
 
-Dog& Dog::operator=(const Dog& copy)
+Animal& Animal::operator=(const Animal& copy)
 {
-    std::cout << "Dog copy assignment operator" << std::endl;
+    std::cout << "Animal copy assignement operator called" << std::endl;
     if (this != &copy)
     {
-        *this = copy;
+        this->type = copy.type;
     }
     return(*this);
 }
 
-void Dog::makeSound() const
+std:: string Animal::getType() const
 {
-    std::cout << "Dog sound" << std::endl;
+    return(type);
 }
+
+

@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 12:05:38 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/18 17:38:35 by knacer           ###   ########.fr       */
+/*   Created: 2024/11/18 20:40:27 by knacer            #+#    #+#             */
+/*   Updated: 2024/11/18 21:30:31 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#include "Cure.hpp"
+#include "Ice.hpp"
 
-#include<string>
-#include<iostream>
 
-class Brain
-{
-    private:
-        std::string ideas[100];
-    public:
-        Brain();
-        ~Brain();
-        Brain(Brain& copy);
-        Brain& operator=(const Brain& copy);
-        void setIdea(int i, const std::string& idea);
-        void printIdea(int i) const;
+int main() {
+    AMateria* b = new Cure();  // This will now work because `Cure` is no longer abstract
+    std::cout << b->getType() << std::endl;  // Outputs: "Cure"
+    AMateria* cloneB = b->clone();  // Create a clone of `b`
+    delete b;  // Clean up
+    delete cloneB;  // Clean up the cloned object
+    return 0;
+}
 
-};
-
-#endif

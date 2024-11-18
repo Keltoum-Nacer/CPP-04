@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 12:05:38 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/18 17:38:35 by knacer           ###   ########.fr       */
+/*   Created: 2024/11/17 10:14:20 by knacer            #+#    #+#             */
+/*   Updated: 2024/11/18 20:19:15 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-#include<string>
-#include<iostream>
-
-class Brain
+int main()
 {
-    private:
-        std::string ideas[100];
-    public:
-        Brain();
-        ~Brain();
-        Brain(Brain& copy);
-        Brain& operator=(const Brain& copy);
-        void setIdea(int i, const std::string& idea);
-        void printIdea(int i) const;
-
-};
-
-#endif
+    Animal *a = new Cat();
+    std::cout << a->getType() << std::endl;
+    a->makeSound();
+    delete a;
+    return 0;
+}

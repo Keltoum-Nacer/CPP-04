@@ -6,7 +6,7 @@
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 10:14:20 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/17 10:43:32 by knacer           ###   ########.fr       */
+/*   Updated: 2024/11/18 18:26:55 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,31 @@
 
 int main()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-const WrongAnimal* c = new WrongCat();
-const WrongAnimal* a = new WrongAnimal();
-
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-
-i->makeSound();
-j->makeSound();
-meta->makeSound();
-c->makeSound();
-a->makeSound();
-
-delete meta;
-delete i;
-delete j;
-delete c;
-delete a;
+    const Animal* arr[6];
+    int i = 0;
+    while(i < 6)
+    {
+        if (i % 2)
+            arr[i] = new Dog();
+        else
+            arr[i] = new Cat();
+        i++;
+    }
+    i = 0;
+    while(i < 6)
+    {
+        delete arr[i];
+        i++;
+    }
+    Dog *a= new Dog();
+    a->getBrain()->setIdea(2, "Dog idea");
+    a->printDogThoughts();
+    Dog *b = new Dog(*a);
+    a->getBrain()->setIdea(2, "Doggg ideaaa");
+    a->printDogThoughts();
+    b->printDogThoughts();
+    
+    delete a;
+    delete b;
 return 0;
 }

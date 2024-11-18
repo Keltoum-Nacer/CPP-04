@@ -1,45 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 10:05:21 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/18 15:57:50 by knacer           ###   ########.fr       */
+/*   Created: 2024/11/18 21:08:32 by knacer            #+#    #+#             */
+/*   Updated: 2024/11/18 21:34:33 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Cat.hpp"
+#include"Cure.hpp"
 
-Cat::Cat()
+Cure::Cure(): AMateria("cure")
 {
-    std::cout << "Cat default constructor called!" << std::endl;
-    type = "Cat";
+    std::cout << "Cure constructor called" << std::endl;
 }
 
-Cat::~Cat()
+Cure::~Cure()
 {
-    std::cout << "Cat destructor called!" << std::endl;
+    std::cout << "Cure destructor called" << std::endl;   
 }
 
-Cat::Cat(Cat &copy)
+Cure::Cure(const Cure& copy): AMateria(copy)
 {
-    std::cout << "Cat copy constructor called" << std::endl;
-    *this = copy;
+    std::cout << "Cure copy constructor called" << std::endl;
 }
 
-Cat& Cat::operator=(const Cat& copy)
+Cure& Cure::operator=(const Cure& copy)
 {
-    std::cout << "Cat copy assignment operator" << std::endl;
+    std::cout << "Cure copy assignment operator" << std::endl;
     if (this != &copy)
     {
-        *this = copy;
+        AMateria::operator=(copy);
     }
     return(*this);
 }
 
-void Cat::makeSound() const
+AMateria* Cure::clone() const
 {
-    std::cout << "Cat sound" << std::endl;
+    return new Cure(*this);
 }
