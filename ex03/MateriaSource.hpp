@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 20:25:10 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/19 17:46:16 by knacer           ###   ########.fr       */
+/*   Created: 2024/11/19 12:01:28 by knacer            #+#    #+#             */
+/*   Updated: 2024/11/19 15:02:45 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-#include"Animal.hpp"
-class Brain;
+#include "IMateriaSource.hpp"
 
-class Dog : public Animal
+class MateriaSource : public IMateriaSource
 {
     private:
-        Brain* brain;
+        AMateria* inventory[4];
     public:
-        Dog();
-        ~Dog();
-        Dog(Dog& copy);
-        Dog& operator=(const Dog& copy);
-        void makeSound() const;
-        void printDogThoughts() const;
-        Brain* getBrain()const;
+        MateriaSource();
+        MateriaSource(const MateriaSource& copy);
+        MateriaSource& operator=(const MateriaSource& copy);
+        virtual ~MateriaSource();
+        void learnMateria(AMateria*);
+        AMateria* createMateria(std::string const & type);
 };
 
 #endif

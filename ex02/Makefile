@@ -2,7 +2,7 @@ SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cp
 OFILES = $(SRCS:.cpp=.o)
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = Animal
+NAME = AbtractAnimal
 
 all: $(NAME)
 

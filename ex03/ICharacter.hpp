@@ -6,12 +6,14 @@
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 21:40:32 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/18 21:41:27 by knacer           ###   ########.fr       */
+/*   Updated: 2024/11/19 15:26:19 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define  ICHARACTER_HPP
+
+class AMateria;
 
 class ICharacter
 {

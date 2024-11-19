@@ -6,7 +6,7 @@
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:56:32 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/18 21:37:09 by knacer           ###   ########.fr       */
+/*   Updated: 2024/11/19 15:57:44 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ class Ice : public AMateria
 {
     public:
         Ice();
-        ~Ice();
+        virtual ~Ice();
         Ice(const Ice& copy);
         Ice& operator=(const Ice& copy);
-        virtual AMateria* clone() const;
+        AMateria* clone() const;
+        void use(ICharacter& target);
 };
 
 #endif

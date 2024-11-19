@@ -6,7 +6,7 @@
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:27:10 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/18 21:36:26 by knacer           ###   ########.fr       */
+/*   Updated: 2024/11/19 15:47:15 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 #define AMATERIA_HPP
 
 #include<iostream>
+#include<string>
+#include"ICharacter.hpp"
 
+class ICharacter;
 class AMateria
 {
     protected:
@@ -27,7 +30,7 @@ class AMateria
         AMateria& operator=(const AMateria& copy);
         std::string const & getType() const;
         virtual AMateria* clone() const = 0;
-        //virtual void use(ICharacter& target);
+        virtual void use(ICharacter& target);
 };
 
 #endif

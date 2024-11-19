@@ -6,20 +6,32 @@
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:40:27 by knacer            #+#    #+#             */
-/*   Updated: 2024/11/18 21:30:31 by knacer           ###   ########.fr       */
+/*   Updated: 2024/11/19 17:01:07 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 #include "Ice.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
 
-
-int main() {
-    AMateria* b = new Cure();  // This will now work because `Cure` is no longer abstract
-    std::cout << b->getType() << std::endl;  // Outputs: "Cure"
-    AMateria* cloneB = b->clone();  // Create a clone of `b`
-    delete b;  // Clean up
-    delete cloneB;  // Clean up the cloned object
+int main()
+{
+    IMateriaSource* src = new MateriaSource();
+    src->learnMateria(new Ice());
+    src->learnMateria(new Cure());
+    ICharacter* me = new Character("me");
+    AMateria* tmp;
+    tmp = src->createMateria("ice");
+    me->equip(tmp);
+    tmp = src->createMateria("cure");
+    me->equip(tmp);
+    ICharacter* bob = new Character("bob");
+    me->use(0, *bob);
+    me->use(1, *bob);
+    delete bob;
+    delete me;
+    delete src;
     return 0;
 }
 

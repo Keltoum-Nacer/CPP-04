@@ -1,4 +1,4 @@
-SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp
+SRCS = main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp 
 OFILES = $(SRCS:.cpp=.o)
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
